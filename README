@@ -12,7 +12,7 @@ Features
 
 Installation
 
-* @sudo bin/plugin -install olegkunitsyn/elasticsearch-browser@
+* sudo bin/plugin -install OlegKunitsyn/elasticsearch-browser
 
 Usage
 
