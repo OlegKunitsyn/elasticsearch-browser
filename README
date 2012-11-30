@@ -1,0 +1,27 @@
+h1. ElasticSearch Data Browser
+
+h2. The Web front-end over ElasticSearch data written in ExtJS
+
+h3. Features
+
+* Rich UI
+* Search
+* Charts
+* Zero-configuration
+* Supports Internet Explorer 6+, Firefox 3.6+, Safari 4+, Chrome 10+, Opera 11+
+
+h3. Installation
+
+* @sudo bin/plugin -install olegkunitsyn/elasticsearch-browser@
+
+h3. Usage
+
+Open http://localhost:9200/_plugin/browser/?database=<index>&table=<type>
+where
+<index> ElasticSearch index
+<type> ElasticSearch index type
+
+Example: http://localhost:9200/_plugin/browser/?database=test&table=users
+
+
+!http://olegkunitsyn.github.com/elasticsearch-browser/screenshots/browser.png(Browser Screenshot)!
