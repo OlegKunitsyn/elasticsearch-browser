@@ -16,7 +16,7 @@
     <script type="text/javascript">
 
 var GET = {};
-window.location.href.replace(/[?&]+(table|database)=([a-z0-9]+)/gi, function(o, k, v) {GET[k] = v;});
+window.location.href.replace(/[?&]+(table|database)=([a-z][-a-z0-9\._]+)/gi, function(o, k, v) {GET[k] = v;});
 if(GET.database == undefined || GET.table == undefined) {
 	document.write('Add to URL required parameters: <b>?database=[index]&table=[type]</b><br/>where<br/> [index] ElasticSearch index<br/> [type] ElasticSearch index type');
 }
