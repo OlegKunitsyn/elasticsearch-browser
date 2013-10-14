@@ -16,7 +16,7 @@
     <script type="text/javascript">
 
 var GET = {};
-window.location.href.replace(/[?&]+(table|database)=([a-z][-a-z0-9\._]+)/gi, function(o, k, v) {GET[k] = v;});
+window.location.href.replace(/[?&]+(table|database)=([a-z][-a-z0-9\._\/]+)/gi, function(o, k, v) {GET[k] = v;});
 if(GET.database == undefined || GET.table == undefined) {
 	document.write('Add to URL required parameters: <b>?database=[index]&table=[type]</b><br/>where<br/> [index] ElasticSearch index<br/> [type] ElasticSearch index type');
 }
@@ -137,7 +137,7 @@ Ext.onReady(function(){
             sortParam: undefined,
             limitParam: undefined,
             type: 'rest',
-            url: 'http://' +window.location.hostname + ':9200/' + GET.database + '/' + GET.table + '/' + '_mapping?pretty=true',
+            url: 'http://' +window.location.hostname + ':9200/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_mapping?pretty=true',
             reader: {
                 type: 'json',
                 root: GET.table,
@@ -200,7 +200,7 @@ Ext.onReady(function(){
 					leadingBufferZone: 100,
 					proxy: {
 						type: 'rest',
-						url: 'http://' +window.location.hostname + ':9200/' + GET.database + '/' + GET.table + '/' + '_search?pretty=true&track_scores=false',
+						url: 'http://' +window.location.hostname + ':9200/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_search?pretty=true&track_scores=false',
                         filterParam: 'query',
                         limitParam: 'size',
                         startParam: 'from',
