@@ -119,6 +119,7 @@ Ext.define('Ext.ux.grid.HeaderToolTip', {
 Ext.onReady(function(){
 	var grid = {};
     var dataStore = {};
+    var browserPort = (window.location.port) ? window.location.port : 9200;
 	
 	var columnModel = [];
 	var fieldModel = [];
@@ -137,7 +138,7 @@ Ext.onReady(function(){
             sortParam: undefined,
             limitParam: undefined,
             type: 'rest',
-            url: 'http://' +window.location.hostname + ':9200/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_mapping?pretty=true',
+            url: window.location.protocol + '//' + window.location.hostname + ':' + browserPort + '/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_mapping?pretty=true',
             reader: {
                 type: 'json',
                 root: GET.table,
@@ -200,7 +201,7 @@ Ext.onReady(function(){
 					leadingBufferZone: 100,
 					proxy: {
 						type: 'rest',
-						url: 'http://' +window.location.hostname + ':9200/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_search?pretty=true&track_scores=false',
+						url: window.location.protocol = '//' + window.location.hostname + ':' + browserPort + '/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_search?pretty=true&track_scores=false',
                         filterParam: 'query',
                         limitParam: 'size',
                         startParam: 'from',
