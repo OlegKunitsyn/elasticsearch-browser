@@ -201,7 +201,7 @@ Ext.onReady(function(){
 					leadingBufferZone: 100,
 					proxy: {
 						type: 'rest',
-						url: window.location.protocol = '//' + window.location.hostname + ':' + browserPort + '/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_search?pretty=true&track_scores=false',
+						url: window.location.protocol + '//' + window.location.hostname + ':' + browserPort + '/' + encodeURIComponent(GET.database) + '/' + encodeURIComponent(GET.table) + '/' + '_search?pretty=true&track_scores=false',
                         filterParam: 'query',
                         limitParam: 'size',
                         startParam: 'from',
