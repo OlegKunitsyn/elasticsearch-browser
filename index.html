@@ -104,6 +104,7 @@ Ext.define('Ext.ux.grid.HeaderToolTip', {
                     beforeshow: function (tip) {
                         var c = headerCt.down('gridcolumn[id=' + tip.triggerElement.id + ']');
                         if (c && c.tooltip) {
+                            tip.update('');
                             tip.items.replace(0, c.tooltip);
                         } else {
                             return false;
