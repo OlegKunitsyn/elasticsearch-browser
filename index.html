@@ -144,9 +144,10 @@ Ext.onReady(function () {
             reader: {
                 type: 'json',
                 root: GET.table,
+                db: GET.database,
                 readRecords: function (data) {
-                    for (p in data[this.root].properties) {
-                        var type = data[this.root].properties[p].type;
+                    for (p in data[this.db].mappings[this.root].properties) {
+                        var type = data[this.db].mappings[this.root].properties[p].type;
                         var xtype = 'textfield';
                         switch (type) {
                             case 'float':
