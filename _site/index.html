@@ -237,7 +237,7 @@ Ext.onReady(function () {
                                 };
                             }
                             // facets
-                            raw['facets'] = facetsConfig;
+                            raw['aggregations'] = facetsConfig;
 
                             Ext.apply(request, {
                                 headers: this.headers,
@@ -258,11 +258,11 @@ Ext.onReady(function () {
                         totalcountchange: function () {
                             grid.down('#status').update({count: dataStore.getTotalCount()});
 
-                            if (dataStore.proxy.reader.jsonData.facets === undefined)
+                            if (dataStore.proxy.reader.jsonData.aggregations === undefined)
                                 return;
                             for (i in grid.columns) {
-                                if (dataStore.proxy.reader.jsonData.facets[grid.columns[i].dataIndex] !== undefined) {
-                                    var facet = dataStore.proxy.reader.jsonData.facets[grid.columns[i].dataIndex];
+                                if (dataStore.proxy.reader.jsonData.aggregations[grid.columns[i].dataIndex] !== undefined) {
+                                    var facet = dataStore.proxy.reader.jsonData.aggregations[grid.columns[i].dataIndex];
                                     switch (facet._type) {
                                         case 'terms':
                                             if (facet.other > 0)
