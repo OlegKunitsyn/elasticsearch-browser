@@ -1,3 +1,5 @@
+# OFF SINCE ES 5.0.0
+
 ElasticSearch Data Browser
 
 The Web front-end over ElasticSearch data written in ExtJS
